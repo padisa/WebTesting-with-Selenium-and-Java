@@ -16,7 +16,7 @@ public class SignUp extends DemoBlaze {
     private String username, password;
     private  WebDriver driver;
     private  WebDriverWait wait;
-
+    DemoBlaze demoblaze = new DemoBlaze();
 
     @BeforeClass
     public  void setUpOfData() {
@@ -28,23 +28,24 @@ public class SignUp extends DemoBlaze {
 
     @Test(priority = 1)
     public void openAndVerifyHomePage() {
-        DemoBlaze.openHomePage(driver);
-        DemoBlaze.verifyHomePageIsOpened(driver, wait);
+
+        demoblaze.openHomePage(driver);
+        demoblaze.verifyHomePageIsOpened(driver, wait);
     }
 
     @Test(priority = 2)
     public void openAndVerifySignUpModule() {
-        DemoBlaze.openAndVerifySignUpModal(driver, wait);
+        demoblaze.openAndVerifySignUpModal(driver, wait);
     }
 
     @Test(priority = 3)
     public void enterSignUpData() {
-        DemoBlaze.enterSignUpData(driver, wait, username, password);
+        demoblaze.enterSignUpData(driver, wait, username, password);
     }
 
     @Test(priority = 4)
     public void validateSuccessfulMessage() {
-        DemoBlaze.validateSuccessfulSignUp(driver, wait);
+        demoblaze.validateSuccessfulSignUp(driver, wait);
         DriverManager.quitDriver();
     }
 

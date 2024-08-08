@@ -27,6 +27,7 @@ public class DemoBlaze {
     public static String xpath_Username_input = getProperty("xpath_Username_input","Configurations/Config.properties");
     public static String xpath_Password_input = getProperty("xpath_Password_input","Configurations/Config.properties");
     public static String xpath_Sign_Up_button = getProperty("xpath_Sign_Up_button","Configurations/Config.properties");
+    public String page;
 
     public static Properties properties;
 
