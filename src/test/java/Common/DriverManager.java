@@ -32,10 +32,10 @@ public class DriverManager {
                 driver = new ChromeDriver(chromeOption);
                 break;
             case FIREFOX:
-                FirefoxOptions firefoxOption = new FirefoxOptions();
-                firefoxOption.addArguments("--remote-allow-origins=*");
                 WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver(firefoxOption);
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                firefoxOptions.setBinary("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+                driver = new FirefoxDriver(firefoxOptions);
                 break;
             case EDGE:
                 EdgeOptions edgeOptions = new EdgeOptions();

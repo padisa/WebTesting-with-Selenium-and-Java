@@ -11,8 +11,8 @@ import org.slf4j.Logger;
 import java.time.Duration;
 
 
-public class SignUp extends DemoBlaze {
-    private static final Logger logger = (Logger) LoggerFactory.getLogger(SignUp.class.getName());
+public class SignUpTest extends DemoBlaze {
+    private static final Logger logger = (Logger) LoggerFactory.getLogger(SignUpTest.class.getName());
     private String username, password;
     private  WebDriver driver;
     private  WebDriverWait wait;
