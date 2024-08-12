@@ -27,6 +27,10 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
         cache: maven
+
+    - name: Set environment variables
+        run: echo "BROWSER=${{ secrets.BROWSER }}" >> $GITHUB_ENV
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
