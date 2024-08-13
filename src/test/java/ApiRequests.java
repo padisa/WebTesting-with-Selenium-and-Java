@@ -59,9 +59,9 @@ public class ApiRequests extends DemoBlaze {
     public void checkIfResponseIsValid(String method) {
         try {
             int responseCode = connection.getResponseCode();
-            logger.info(method + " Response Code :: " + responseCode);
+            logger.info(method + " Response Code: " + responseCode);
 
-            logger.info("Check if the" + method +" request was successful");
+            logger.info("Check if the " + method +" request was successful");
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 System.out.println(method + " request worked successfully.");
             } else {

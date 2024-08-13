@@ -87,7 +87,7 @@ public class DemoBlaze {
 
         logger.info("We will generate random number to join in our username and password.");
         Random rand = new Random();
-        int value = rand.nextInt(50);
+        int value = rand.nextInt(10000);
 
         logger.info("Driver will check if input filed for Username is clickable.");
         WebElement userNameInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_Username_input)));
