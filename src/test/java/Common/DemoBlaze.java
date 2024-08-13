@@ -1,4 +1,5 @@
 package Common;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -113,5 +114,19 @@ public class DemoBlaze {
 
         logger.info("Driver will click to accept alert.");
         alert.accept();
+    }
+
+    public static String generateRandomUsername() {
+        String username = "RandomUser";
+        Random random = new Random();
+        int value = random.nextInt(1000);
+        username = username + value;
+        return  username;
+    }
+
+    public static String generatePassword() {
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~`!@#$%^&*()-_=+[{]}\\|;:\'\",<.>/?";
+        String password = RandomStringUtils.random( 8, characters );
+        return password;
     }
 }

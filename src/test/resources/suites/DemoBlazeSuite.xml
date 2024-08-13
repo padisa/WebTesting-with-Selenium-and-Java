@@ -3,6 +3,7 @@
     <test name="SignUpTest">
         <classes>
             <class name="SignUpTest"/>
+            <class name="ApiTests"></class>
         </classes>
     </test>
 </suite>
