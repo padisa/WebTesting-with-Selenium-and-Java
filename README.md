@@ -19,9 +19,8 @@ Before you run this project, ensure you have met the following requirements:
 Follow these steps to set up the project on your local machine:
 1. **Clone repository**: *git clone git@github.com:yourUsername/WebTesting-with-Selenium-and-Java.git*
 2. **Navigate to the project directory**: *cd WebTesting-with-Selenium-and-Java*
-3. **Install dependencies**: Run command *mvn clean install -Dbrowser = chrome*
-4. When running the test in IntelliJ you need to set configuration for WebDriver: *f.e. -Dbrowser = firefox*
-5. Run the tests: *mvn clean verify -Dbrowser=chrome*
+3. **Run the tests**: *mvn clean verify -Dbrowser=chrome*
+4. When running the test in IntelliJ you need to set configuration for WebDriver: *f.e. -Dbrowser = chrome*
 
 ## 📂 Project Structure
 - **src/test/java/**: Contains the test cases and test suite configurations.
