@@ -12,6 +12,8 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <suit>DemoBlazeSuite</suit>
+        <parallel_type>methods</parallel_type>
+        <thread.count>2</thread.count>
     </properties>
 
     <dependencies>
@@ -60,6 +62,8 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/suites/${suit}.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <parallel>${parallel_type}</parallel>
+                    <threadCount>${thread.count}</threadCount>
                 </configuration>
             </plugin>
         </plugins>

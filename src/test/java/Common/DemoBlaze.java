@@ -87,7 +87,7 @@ public class DemoBlaze {
 
         logger.info("We will generate random number to join in our username and password.");
         Random rand = new Random();
-        int value = rand.nextInt(50);
+        int value = rand.nextInt(10000);
 
         logger.info("Driver will check if input filed for Username is clickable.");
         WebElement userNameInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_Username_input)));
@@ -104,22 +104,29 @@ public class DemoBlaze {
     }
 
     public static void validateSuccessfulSignUp(WebDriver driver, WebDriverWait wait) {
-        logger.info("Driver will check if alert is present.");
-        wait.until(ExpectedConditions.alertIsPresent());
+        try {
+            logger.info("Driver will check if alert is present.");
+            wait.until(ExpectedConditions.alertIsPresent());
 
-        Alert alert = driver.switchTo().alert();
+            Alert alert = driver.switchTo().alert();
 
-        String alertText = alert.getText();
-        Assert.assertTrue(alertText.contains("Sign up successful."), "Alert text does not contain expected message.");
+            String alertText = alert.getText();
+            Assert.assertTrue(alertText.contains("Sign up successful."), "Alert text does not contain expected " +
+                    "message.");
 
-        logger.info("Driver will click to accept alert.");
-        alert.accept();
+            logger.info("Driver will click to accept alert.");
+            alert.accept();
+        } catch (AssertionError t) {
+            driver.switchTo().alert();
+            ScreenshotUtil.captureScreenshot(driver, "SignUpFailure");
+            throw t;
+        }
     }
 
     public static String generateRandomUsername() {
         String username = "RandomUser";
         Random random = new Random();
-        int value = random.nextInt(1000);
+        int value = random.nextInt(100);
         username = username + value;
         return  username;
     }

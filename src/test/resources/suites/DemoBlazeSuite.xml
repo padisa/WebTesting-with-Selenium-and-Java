@@ -1,9 +1,15 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="DemoBlazeSuite">
+
+<suite name="DemoBlazeTests" parallel="methods" thread-count="2">
     <test name="SignUpTest">
         <classes>
             <class name="SignUpTest"/>
+        </classes>
+    </test>
+    <test name="ApiTest">
+        <classes>
             <class name="ApiTests"></class>
         </classes>
     </test>
+
 </suite>
